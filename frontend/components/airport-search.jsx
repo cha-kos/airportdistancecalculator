@@ -27,10 +27,8 @@ export default class AirportSearch extends React.Component {
         data: {query: `${this.state.query.toLowerCase()}`}
       })
       .done((response) => {
-        console.log(response);
         this.setState( {airports: response});})
       .fail((xhr) => {
-        console.log('error', xhr);
       });
     }
   }
@@ -103,15 +101,3 @@ export default class AirportSearch extends React.Component {
   }
 
 }
-
-// jwQERXuHQ0MNMrYVgYCHi
-// 3g6kfQh3hHfwr99dxyttp7Ap60tG1tCKrZF1P4Ms
-//
-// https://api.aerisapi.com/[:endpoint]/[:action]?client_id=jwQERXuHQ0MNMrYVgYCHi&client_secret=3g6kfQh3hHfwr99dxyttp7Ap60tG1tCKrZF1P4Ms
-// https://api.aerisapi.com/places/airports/search?query=country:us,city:^a&client_id=jwQERXuHQ0MNMrYVgYCHi&client_secret=3g6kfQh3hHfwr99dxyttp7Ap60tG1tCKrZF1P4Ms
-// https://api.aerisapi.com/places/airports/search?limit=50&query=country:us,city:^a&client_id=jwQERXuHQ0MNMrYVgYCHi&client_secret=3g6kfQh3hHfwr99dxyttp7Ap60tG1tCKrZF1P4Ms
-// https://api.aerisapi.com/places/airports/search?limit=50&filter=largeairport&query=country:us,city:^newa&client_id=jwQERXuHQ0MNMrYVgYCHi&client_secret=3g6kfQh3hHfwr99dxyttp7Ap60tG1tCKrZF1P4Ms
-
-
-// 52ca743c
-// 79c559a7e52a22c3c8f7f84279a6c49f
