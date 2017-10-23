@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-// import logo from '../app/assets/images/logo.svg';
-// import './App.css';
-// import AirportSearch from './components/airport-search';
 import DistanceCalculator from './components/distance-calculator';
 
 class App extends Component {

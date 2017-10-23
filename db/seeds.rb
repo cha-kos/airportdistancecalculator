@@ -66,6 +66,7 @@ STATE_ABBR_TO_NAME = {
     'WY' => 'Wyoming'
   }
 
+#Create Airports Table
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'airports.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 
@@ -81,7 +82,7 @@ csv.each do |row|
   a.save
 end
 
-#Route Seed
+#Create Routes Table
 Route.destroy_all
 
 routes_text = File.read(Rails.root.join('lib', 'seeds', 'routes.csv'))
@@ -94,7 +95,7 @@ routes.each do |row|
   a.save
 end
 
-# Add Total Routes to Airports
+# Add Total Routes to Airports for better search results
 Airport.all.each do |airport|
   dest_count = Route.group(:destination).count
   source_count = Route.group(:destination).count
@@ -109,34 +110,4 @@ Airport.all.each do |airport|
   end
 end
 
-
-
-
-## External API Seed
-# url = 'https://api.aerisapi.com/places/airports/search?limit=3000&query=country:us&client_id=jwQERXuHQ0MNMrYVgYCHi&client_secret=3g6kfQh3hHfwr99dxyttp7Ap60tG1tCKrZF1P4Ms'
-# uri = URI(url)
-#
-# response = Net::HTTP.get(uri)
-# data = JSON.parse(response)
-#
-# data["response"].each do |airport|
-#
-#   if  (airport["profile"]["typeENG"] == "small airport")
-#     size = 3
-#   elsif (airport["profile"]["typeENG"] == "medium airport")
-#     size = 2
-#   elsif (airport["profile"]["typeENG"] == "large airport")
-#     size = 1
-#   end
-#   Airport.create(
-#     lat: airport["loc"]["lat"],
-#     lon: airport["loc"]["long"],
-#     name: airport["place"]["name"],
-#     city: airport["place"]["city"],
-#     state_full: airport["place"]["stateFull"],
-#     state_abv: airport["place"]["state"],
-#     code: airport["profile"]["iata"],
-#     size: size
-#     )
-#
-# end
+Route.destroy_all
