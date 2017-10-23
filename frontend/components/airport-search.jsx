@@ -1,5 +1,4 @@
-import React from "react";
-import classnames from "classnames";
+import React from "react"; 
 
 
 export default class AirportSearch extends React.Component {
