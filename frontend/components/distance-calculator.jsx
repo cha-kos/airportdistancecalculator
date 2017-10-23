@@ -15,12 +15,14 @@ export default class DistanceCalculator extends React.Component {
      this.calculateDistance = this.calculateDistance.bind(this);
   }
 
+// Update the origin or destination airport information for calculation
   updateAirport(property, airport) {
     return () => {
       this.setState({ [property.toLowerCase()] : airport}, () => this.refs.map.placeMarker(property));
     };
   }
 
+// Calculate distance between origin and destination based on latitude and longitude
   calculateDistance(){
     if (this.state.destination && this.state.origin){
           const lat1 = this.state.origin.lat;

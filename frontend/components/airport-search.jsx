@@ -12,12 +12,14 @@ export default class AirportSearch extends React.Component {
     };
   }
 
+  // Update the search query on key and then make api request for airports
   update(property) {
     return e => {
       this.setState({ [property]: e.target.value, airports: [] }, this.searchAirports);
     };
   }
 
+// Search airports using query from current state
   searchAirports(){
     if (this.state.query.length > 0){
     let airports = $.ajax({
@@ -32,6 +34,7 @@ export default class AirportSearch extends React.Component {
     }
   }
 
+// Select airport and update state of airport distanct-calculator component
   selectAirport(airport) {
     this.setState({
       query: airport.name + ", "+ airport.state_abv + " (" + airport.code + ")",
@@ -39,6 +42,7 @@ export default class AirportSearch extends React.Component {
       airports: []}, this.props.updateAirport(this.props.type, airport));
   }
 
+// Navigate through the search suggestions using the arrow keys
   handleKeyPress(e){
     if(!this.refs[0]){
       return;

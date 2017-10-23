@@ -1,6 +1,14 @@
 class Api::AirportsController < ApplicationController
 
   def index
+
+    # Query database for airports with search query matching:
+    #   -Aiport Name
+    #   -City
+    #   -State Abbreviation
+    #   -State Full Name
+    #   -Airport IATA Code
+
     @airports =
       Airport
         .order("total_routes desc")

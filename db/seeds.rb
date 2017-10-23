@@ -95,7 +95,7 @@ routes.each do |row|
   a.save
 end
 
-# Add Total Routes to Airports for better search results
+# Add Total Routes to Airports table for more accurate search results
 Airport.all.each do |airport|
   dest_count = Route.group(:destination).count
   source_count = Route.group(:destination).count
