@@ -1,0 +1,74 @@
+
+.airport-search-body{
+  margin: 0px 20px;
+}
+
+.airport-search-bar{
+  width: 220px;
+  padding: 5px 10px;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid gray;
+  height: 23px;
+  text-overflow: ellipsis;
+  background-color: #F7FCFF;
+}
+
+.airport-result-list{
+  position: absolute;
+  z-index: 100;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  width: 244px;
+  max-height: 300px;
+  overflow: auto;
+  background: rgba(206, 218, 229, 1);
+  border-radius: 5px;
+}
+
+.airport-result{
+  padding: 10px;
+  cursor: pointer;
+}
+
+.airport-result:hover{
+  background-color: #afb9c2;
+}
+
+.airport-result.active{
+  background-color: rgb(96, 207, 187);
+}
+
+.airport-name{
+  font-size: 14px;
+}
+.airport-location{
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 100;
+}
+
+.airport-result-list::-webkit-scrollbar-track
+{
+
+	background-color: #F5F5F5;
+}
+
+.airport-result-list::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.airport-result-list::-webkit-scrollbar-thumb
+{
+  border-radius: 1px;
+	background-color: #9098A0;
+}
+
+@media only screen and (max-width: 1024px) {
+  .airport-search-body{
+      margin: 10px 20px;
+    }
+}
