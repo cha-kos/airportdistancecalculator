@@ -110,4 +110,6 @@ Airport.all.each do |airport|
   end
 end
 
+# Remove routes table for calculations have been performed and it is no longer
+# needed
 Route.destroy_all

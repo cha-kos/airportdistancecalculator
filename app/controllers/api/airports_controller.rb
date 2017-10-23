@@ -13,7 +13,7 @@ class Api::AirportsController < ApplicationController
       Airport
         .order("total_routes desc")
         .select("*")
-        .where("lower(name) LIKE '#{"%"+params["query"]+"%"}'
+        .where("lower(name) LIKE '#{params["query"]+"%"}'
                   OR lower(city) LIKE '#{params["query"]+"%"}'
                   OR lower(state_abv) LIKE '#{params["query"]+"%"}'
                   OR lower(state_full) LIKE '#{params["query"]+"%"}'
