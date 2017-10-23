@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 
 
 export default class AirportSearch extends React.Component {
@@ -19,7 +19,7 @@ export default class AirportSearch extends React.Component {
   }
 
   searchAirports(){
-    if (this.state.query.length > 1){
+    if (this.state.query.length > 0){
     let airports = $.ajax({
         method: 'GET',
         url: `/api/airports`,
@@ -40,8 +40,10 @@ export default class AirportSearch extends React.Component {
   }
 
   handleKeyPress(e){
-    if (this.state.cursor === null && e.key === "ArrowDown"){
-      this.setState({cursor: 0}, () =>{
+    if(!this.refs[0]){
+      return;
+    }else if (this.state.cursor === null && e.key === "ArrowDown"){
+        this.setState({cursor: 0}, () =>{
         this.refs[this.state.cursor].focus();
         let airport = this.state.airports[this.state.cursor];
         this.setState({query: airport.name + ", "+ airport.state_abv + " (" + airport.code + ")"});
