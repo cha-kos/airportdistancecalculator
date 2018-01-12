@@ -8,7 +8,7 @@ routes at each airport.
 
 ## Getting Started
 
-To run this application locally on your machine, first navigate to the `Hakos_Chris - Moat_Q2A` folder via your command line.
+To run this application locally on your machine, first navigate to the `airportdistancecalculator` folder via your command line.
 
 #### Ruby
 Please make sure you have Ruby installed on your computer by running
@@ -39,7 +39,7 @@ https://nodejs.org/en/download/package-manager/
 
 ## Launching the app
 Once you have all of the proper software installed, please run the following commands
-from you command line, inside of the `Hakos_Chris - Moat_Q2A` folder.
+from you command line, inside of the `airportdistancecalculator` folder.
 
 Install Rails dependencies
 `bundle install`
