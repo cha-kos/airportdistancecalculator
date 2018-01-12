@@ -98,7 +98,7 @@ end
 # Add Total Routes to Airports table for more accurate search results
 Airport.all.each do |airport|
   dest_count = Route.group(:destination).count
-  source_count = Route.group(:destination).count
+  source_count = Route.group(:source).count
 
   if (dest_count[airport.code] && source_count[airport.code])
     total_routes = dest_count[airport.code] + source_count[airport.code]
