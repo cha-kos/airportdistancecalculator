@@ -89,17 +89,18 @@ export default class AirportSearch extends React.Component {
             <ul className="airport-result-list"
             id="style-8">
               {this.state.airports.map((airport, index) => {
-                return <li
-                className={`airport-result ${this.state.cursor === index ? 'active' : ''}`}
-                ref={index}
-                key={index}
-                onClick={() => {
-                  this.selectAirport(airport);
-                }}
-                ><div className="airport-name">{airport.name} ({airport.code})</div>
-                  <div className="airport-location">{airport.city}, {airport.state_abv}</div>
-                 </li>;
-              })}
+                return (<li
+                            className={`airport-result ${this.state.cursor === index ? 'active' : ''}`}
+                            ref={index}
+                            key={index}
+                            onClick={() => {
+                              this.selectAirport(airport);
+                            }}>
+                          <div className="airport-name">{airport.name} ({airport.code})</div>
+                          <div className="airport-location">{airport.city}, {airport.state_abv}</div>
+                        </li>);
+                 })
+                }
             </ul>
         </div>
     );

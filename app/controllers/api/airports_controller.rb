@@ -8,18 +8,19 @@ class Api::AirportsController < ApplicationController
     #   -State Abbreviation
     #   -State Full Name
     #   -Airport IATA Code
+    @airports = Airport.search_airports(params["query"])
 
-    @airports =
-      Airport
-        .order("total_routes desc")
-        .select("*")
-        .where("lower(name) LIKE '#{params["query"]+"%"}'
-                  OR lower(city) LIKE '#{params["query"]+"%"}'
-                  OR lower(state_abv) LIKE '#{params["query"]+"%"}'
-                  OR lower(state_full) LIKE '#{params["query"]+"%"}'
-                  OR lower(code) LIKE '#{params["query"]+"%"}'
-                  ")
-        .limit(15)
+    # @airports =
+    #   Airport
+    #     .order("total_routes desc")
+    #     .select("*")
+    #     .where("lower(name) LIKE '#{params["query"]+"%"}'
+    #               OR lower(city) LIKE '#{params["query"]+"%"}'
+    #               OR lower(state_abv) LIKE '#{params["query"]+"%"}'
+    #               OR lower(state_full) LIKE '#{params["query"]+"%"}'
+    #               OR lower(code) LIKE '#{params["query"]+"%"}'
+    #               ")
+    #     .limit(15)
   end
 
 
